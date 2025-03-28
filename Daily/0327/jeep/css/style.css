@@ -91,9 +91,9 @@ section {
   height: 155px;
 }
 #news > p {
-  margin: 14px 0;
+  margin: 16px 0;
   line-height: 20px;
-  font-size: 12px;
+  font-size: 14px;
   color: grey;
 }
 #news > p:hover {
@@ -102,10 +102,33 @@ section {
 #icon {
   width: 455px;
   height: 155px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+#icon > .iconbox {
+  display: flex;
+  flex-direction: column;
+}
+#icon > .iconbox:hover {
+  opacity: 0.7;
+}
+#icon > .iconbox > img {
+  width: 80px;
+  height: 50px;
 }
 #brand {
   width: 330px;
   height: 155px;
+}
+#brand > p {
+  margin: 16px 0;
+  line-height: 20px;
+  font-size: 14px;
+  color: grey;
+}
+#brand > p:hover {
+  color: black;
 }
 #promotion {
   width: 345px;
@@ -130,9 +153,21 @@ footer {
   width: 1240px;
   height: 130px;
 }
-footer > .box > .footerbox {
-  width: 610px;
+footer > #box > .footerbox {
+  /* width: 610px; */
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
+  float: left;
+}
+footer > #box > .footerbox > ul > li > a {
+  font-size: 14px;
+  color: gray;
+}
+footer > #box > .caption {
+  float: left;
+}
+footer > #box > .caption > p {
+  font-size: 14px;
+  color: black;
 }
