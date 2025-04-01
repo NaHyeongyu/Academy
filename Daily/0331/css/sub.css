@@ -1,0 +1,109 @@
+@charset "utf-8";
+.details {
+  width: 1200px;
+  height: auto;
+}
+.pagelocation {
+  width: 1200px;
+  margin: 20px auto;
+}
+.pagelocation > a > img {
+  width: auto;
+  height: 20px;
+}
+.pagelocation > a {
+  color: grey;
+  font-size: 15px;
+  height: 20px;
+}
+.pagelocation > a:hover {
+  color: black;
+}
+.productinfo {
+  width: 1200px;
+  height: 700px;
+}
+.productpic {
+  float: left;
+  width: 550px;
+  height: 630px;
+  margin: 0 0 0 0;
+}
+.productpic > .mainpic {
+  width: 550px;
+  height: 550px;
+  border-radius: 20px;
+}
+
+.productpic > .subpic {
+  margin-top: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
+}
+.productselect {
+  float: right;
+  width: 590px;
+}
+.productselectdetail {
+  width: 100%;
+  height: 400px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+th,
+td {
+  /* border: 1px solid #ddd; */
+  padding: 8px;
+  text-align: left;
+}
+th {
+  background-color: #f4f4f4;
+}
+.price {
+  text-align: right;
+}
+.price > span {
+  font-size: 16px;
+  margin-right: 8px;
+}
+.price > b {
+  color: #dd3454;
+  font-size: 32px;
+}
+.buttones {
+  margin-top: 20px;
+}
+#nomalbutton {
+  width: 140px;
+  height: 60px;
+  border-color: rgb(194, 194, 194);
+  border-style: solid;
+  border-width: 0.3px;
+  color: grey;
+}
+#nomalbutton:hover {
+  width: 140px;
+  height: 60px;
+  border-color: rgb(0, 0, 0);
+  color: black;
+  border-width: 0.3px;
+}
+#paynow {
+  width: 140px;
+  height: 60px;
+  width: 295px;
+  background-color: #dd3454;
+  color: white;
+}
+#paynow:hover {
+  width: 140px;
+  height: 60px;
+  width: 295px;
+  background-color: #dd3454;
+  color: white;
+  border-color: white;
+}

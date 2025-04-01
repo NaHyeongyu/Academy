@@ -1,0 +1,211 @@
+@charset "utf-8";
+header {
+  width: 100%;
+  height: 168px;
+  /* display: flex;
+    flex-direction: column;
+    background-color: red; */
+}
+.headertop {
+  width: 1200px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+}
+.logo {
+  width: 100%;
+  height: 86px;
+}
+.headerbottom {
+  width: 1200px;
+  height: 47px;
+}
+.topmenu1 {
+  width: 464px;
+  height: 35px;
+  margin-top: 20px;
+  align-items: center;
+}
+.topmenu1 > a {
+  font-size: 12px;
+  display: inline;
+}
+.topmenu1 > img {
+  width: 16px;
+  height: 16px;
+  display: inline;
+}
+.topmenu1 > span {
+  font-size: 12px;
+}
+.topmenu2 {
+  float: right;
+  width: 340px;
+  border: 0;
+}
+.topmenu2 > ul > li > a {
+  font-size: 12px;
+}
+
+.topmenu2 > ul {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.logo {
+  text-align: center;
+}
+p {
+  display: inline;
+}
+
+.category {
+  width: 160px;
+  height: 34px;
+  border-radius: 24px;
+  background-color: #dd3454;
+  float: left;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 7px;
+}
+.category > span {
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+.category > .categoryimg {
+  width: 16px;
+  height: 16px;
+}
+.category > .categoryimg > img {
+  width: 100%;
+  height: 100%;
+}
+nav {
+  width: 600px;
+  float: left;
+  margin: 9px 0px 0px 20px;
+}
+nav > ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+}
+nav > ul > li > a {
+  color: #242529;
+  font-size: 14px;
+}
+nav > ul > li > a:hover {
+  color: #dd3454;
+}
+.finder {
+  width: 310px;
+  height: 34px;
+  float: right;
+  margin-top: 7px;
+}
+form {
+  width: 300px;
+  height: 34px;
+  background-color: rgb(233, 233, 233);
+  border: none;
+  border-radius: 20px;
+}
+fieldset {
+  border: 0;
+}
+
+form > fieldset > input {
+  width: 200px;
+  height: 30px;
+  background-color: rgb(233, 233, 233);
+  border: 0;
+  margin: 2px 0px 0px 30px;
+}
+::placeholder {
+  font-size: 14px;
+}
+
+form > fieldset > img {
+  height: 24px;
+  width: 24px;
+  margin: 5px 20px 0px 0px;
+  float: right;
+}
+
+footer {
+  background-color: rgb(255, 255, 255);
+  height: auto;
+}
+.more > a {
+  font-weight: 500;
+}
+.subnav3 {
+  padding: 30px 0px 30px 0px;
+  width: 100%;
+  height: auto;
+}
+.subnav3 > ul {
+  width: 800px;
+  display: flex;
+  justify-content: center;
+}
+.subnav3 > ul > li > a {
+  font-size: 14px;
+}
+.footerdetail {
+  margin-top: 40px;
+  width: 1200px;
+  height: 220px;
+}
+.footerlogo {
+  float: left;
+  height: 200px;
+}
+.footerwrite {
+  float: left;
+  margin-left: 50px;
+}
+.footerwrite > span {
+  font-size: 12px;
+}
+.contact {
+  float: right;
+}
+.contact > h4 {
+  margin-bottom: 10px;
+}
+.contact > span {
+  font-size: 12px;
+}
+.kakao {
+  margin-top: 30px;
+  align-items: start;
+}
+.contact > .kakao > img {
+  float: left;
+  width: 28px;
+  height: 28px;
+}
+.kakao > a {
+  font-size: 14px;
+  font-weight: 600;
+  float: left;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+.sns {
+  display: flex;
+  float: left;
+  margin-top: 20px;
+}
+.sns > .snsicon > a > img {
+  width: 28px;
+  height: 28px;
+  margin: 0 4px;
+}

@@ -1,158 +1,5 @@
 @charset "utf-8";
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0 auto;
-}
-ul,
-ol,
-li {
-  list-style: none;
-}
-a {
-  color: black;
-  text-decoration: none;
-}
-header {
-  width: 100%;
-  height: 168px;
-  /* display: flex;
-  flex-direction: column;
-  background-color: red; */
-}
-.headertop {
-  width: 1200px;
-  height: 35px;
-  display: flex;
-  align-items: center;
-}
-.logo {
-  width: 100%;
-  height: 86px;
-}
-.headerbottom {
-  width: 1200px;
-  height: 47px;
-}
-.topmenu1 {
-  width: 464px;
-  height: 35px;
-  margin-top: 20px;
-  align-items: center;
-}
-.topmenu1 > a {
-  font-size: 12px;
-  display: inline;
-}
-.topmenu1 > img {
-  width: 16px;
-  height: 16px;
-  display: inline;
-}
-.topmenu1 > span {
-  font-size: 12px;
-}
-.topmenu2 {
-  float: right;
-  width: 340px;
-  border: 0;
-}
-.topmenu2 > ul > li > a {
-  font-size: 12px;
-}
-
-.topmenu2 > ul {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-.logo {
-  text-align: center;
-}
-p {
-  display: inline;
-}
-
-.category {
-  width: 160px;
-  height: 34px;
-  border-radius: 24px;
-  background-color: #dd3454;
-  float: left;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-top: 7px;
-}
-.category > span {
-  color: white;
-  font-size: 14px;
-  font-weight: bold;
-}
-.category > .categoryimg {
-  width: 16px;
-  height: 16px;
-}
-.category > .categoryimg > img {
-  width: 100%;
-  height: 100%;
-}
-nav {
-  width: 600px;
-  float: left;
-  margin: 9px 0px 0px 20px;
-}
-nav > ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 30px;
-}
-nav > ul > li > a {
-  color: #242529;
-  font-size: 14px;
-}
-nav > ul > li > a:hover {
-  color: #dd3454;
-}
-.finder {
-  width: 310px;
-  height: 34px;
-  float: right;
-  margin-top: 7px;
-}
-form {
-  width: auto;
-  height: 34px;
-  background-color: rgb(233, 233, 233);
-  border: none;
-  border-radius: 20px;
-}
-fieldset {
-  border: 0;
-}
-
-form > fieldset > input {
-  width: 200px;
-  height: 30px;
-  background-color: rgb(233, 233, 233);
-  border: 0;
-  margin: 4px 0px 4px 30px;
-}
-::placeholder {
-  font-size: 14px;
-}
-
-form > fieldset > img {
-  height: 24px;
-  width: 24px;
-  margin: 6px 40px 0px 0px;
-  float: right;
-}
-
 #slider {
   width: 100%;
   height: 330px;
@@ -307,6 +154,109 @@ form > fieldset > img {
   text-decoration: line-through;
 }
 .container3 {
-  background-color: rgb(230, 230, 230);
+  background-color: rgb(241, 241, 241);
   padding-top: 20px;
+  padding-bottom: 40px;
+}
+.reviewimg {
+  text-align: center;
+  margin: 80px 0px 0px 0px;
+}
+.container4 > h3 {
+  text-align: center;
+  font-size: 30px;
+}
+.section4 {
+  display: flex;
+  width: 1200px;
+}
+.box4 {
+  width: 282px;
+  height: auto;
+  margin-top: 40px;
+}
+.box4 > img {
+  border-radius: 20px;
+  width: 100%;
+  height: auto;
+}
+.section4 > .box > .star {
+  height: 20px;
+  width: 282px;
+}
+.section4 > .box4 > .star > ul {
+  margin-top: 12px;
+}
+.section4 > .box4 > .star > ul > li {
+  width: 20px;
+  height: 20px;
+  display: block;
+  float: left;
+}
+.section4 > .box4 > .star > ul > li > img {
+  width: 100%;
+  height: 100%;
+}
+.box4 > a > h2 {
+  font-size: 19px;
+  margin-top: 12px;
+}
+.box4 > a > h4 {
+  font-size: 13px;
+  margin-top: 12px;
+  color: rgb(86, 86, 86);
+  font-weight: lighter;
+}
+.container5 > h3 {
+  text-align: center;
+  font-size: 30px;
+  margin: 80px 0px 0px 0px;
+}
+.subnav2 {
+  margin-top: 40px;
+  width: 900px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.iconbox {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.iconbox > img {
+  width: 60px;
+  height: 60px;
+  padding: 8px;
+}
+.section5 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 1200px;
+}
+.section5 > .box5 {
+  width: 222px;
+  height: auto;
+  margin-top: 70px;
+}
+.section5 > .box5 > img {
+  width: 100%;
+  border-radius: 20px;
+}
+.section5 > .box5 > a > h3 {
+  margin-top: 12px;
+  font-size: 17px;
+  font-weight: 500;
+}
+.section5 > .box5 > a > h2 {
+  font-size: 18px;
+  margin-top: 12px;
+}
+.more {
+  margin-top: 60px;
+  border: rgb(181, 181, 181) solid 0.3px;
+  padding: 20px;
+  width: 1200px;
+  text-align: center;
 }
