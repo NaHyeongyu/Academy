@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <ul>
+      <li>사과</li>
+      <li>수박</li>
+      <li>딸기</li>
+    </ul>
+
+    <button onclick="chc();">click</button>
+    <button id="btn1">click</button>
+
+
+    <script>
+     function chc(){
+       document.getElementsByTagName('li')[1].style.color="green"
+     }
+
+     document.getElementById('btn1').onclick=function(){
+       chc();
+     }
+
+
+    </script>
+  </body>
+</html>
