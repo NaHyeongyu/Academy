@@ -5,6 +5,7 @@
   height: 330px;
   background-color: rgb(121, 121, 255);
   position: relative;
+  margin-top: 12px;
 }
 #slider > img {
   width: 100%;
@@ -61,23 +62,23 @@
   height: auto;
   margin-top: 40px;
 }
-.box1 > img {
+.box1 > a > img {
   width: 282px;
   height: 282px;
   border-radius: 20px;
 }
-.box1 > h3 {
+.box1 > a > h3 {
   font-size: 17px;
   margin: 8px 0px 12px 0px;
 }
-.box1 > h2 {
+.box1 > a > h2 {
   font-size: 19px;
 }
-.box1 > h2 > span {
+.box1 > a > h2 > span {
   font-size: 19px;
   color: #dd3454;
 }
-.box1 > h4 {
+.box1 > a > h4 {
   color: grey;
   font-size: 14px;
   text-decoration: line-through;
@@ -102,17 +103,25 @@
   text-align: center;
   font-size: 30px;
 }
-.container2 > .section2 > .box2 img {
+.container2 > .section2 > .box2 > a > img {
   border-radius: 20px;
 }
-.box2 > span {
+.box2 > a > span {
   text-align: center;
-  width: 70%;
+  width: 80%;
   position: absolute;
   color: white;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  font-size: 20px;
+}
+.box2 > a > span > .textefect {
+  font-size: 25px;
+  font-weight: bold;
+}
+.box2 > a > span > hr {
+  margin: 6px 0;
 }
 .box3 {
   margin-top: 40px;

@@ -9,8 +9,6 @@ header {
 .headertop {
   width: 1200px;
   height: 35px;
-  display: flex;
-  align-items: center;
 }
 .logo {
   width: 100%;
@@ -23,21 +21,41 @@ header {
 .topmenu1 {
   width: 464px;
   height: 35px;
-  margin-top: 20px;
+  float: left;
+  padding-top: 6px;
+}
+.topmenu1left {
+  float: left;
+  display: flex;
   align-items: center;
 }
-.topmenu1 > a {
+.topmenu1right {
+  float: right;
+  display: flex;
+  margin-right: 60px;
+}
+.topmenu1 > .topmenu1left > a {
   font-size: 12px;
+  margin-left: 4px;
   display: inline;
 }
-.topmenu1 > img {
+.topmenu1 > .topmenu1left > img {
   width: 16px;
   height: 16px;
   display: inline;
 }
-.topmenu1 > span {
+.topmenu1 > .topmenu1right > a {
   font-size: 12px;
+  display: inline;
+  margin-left: 10px;
 }
+.topmenu1 > .topmenu1right > img {
+  width: 16px;
+  height: 16px;
+  display: inline;
+  margin-right: 2px;
+}
+
 .topmenu2 {
   float: right;
   width: 340px;
@@ -87,18 +105,19 @@ p {
 nav {
   width: 600px;
   float: left;
-  margin: 9px 0px 0px 20px;
+  margin: 9px 0px 0px 0px;
 }
 nav > ul {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  width: 100%;
+  width: 90%;
   height: 30px;
 }
 nav > ul > li > a {
   color: #242529;
-  font-size: 14px;
+  font-size: 15px;
+  font-weight: bold;
 }
 nav > ul > li > a:hover {
   color: #dd3454;
@@ -147,16 +166,17 @@ footer {
 }
 .subnav3 {
   padding: 30px 0px 30px 0px;
-  width: 100%;
+  width: 1100px;
   height: auto;
 }
 .subnav3 > ul {
-  width: 800px;
+  width: 900px;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 .subnav3 > ul > li > a {
-  font-size: 14px;
+  font-size: 15px;
+  color: rgb(61, 61, 61);
 }
 .footerdetail {
   margin-top: 40px;
