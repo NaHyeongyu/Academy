@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Title</title>
+</head>
+<body>
+<script>
+
+var user_height = prompt("당신의 신장은?", "0");
+
+var user_weight = prompt("당신의 체중은?", "0");
+
+// 표준 체중 계산: (신장 - 100) * 0.9
+var normal_weight = (user_height - 100) * 0.9;
+
+// 현재 체중이 표준 체중보다 큰지 작은지 비교
+var result = user_weight > normal_weight ? "표준 체중 이상" : "표준 체중 이하";
+
+document.write(result);
+
+</script>
+</body>
+</html>
