@@ -1,7 +1,4 @@
-function changeColor_red() {
-  document.getElementsByTagName("li")[(0, 1, 2)].style.color = "red";
-}
+var x = 9;
+x *= 3;
 
-function click_red() {
-  changeColor_red();
-}
+document.getElementById("demo").innerHTML = x;
