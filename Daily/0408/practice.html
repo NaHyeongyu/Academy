@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2 id="demo"></h2>
+    <h2 id="demo1"></h2>
+    <script>
+      var ask = parseInt(prompt("입력하실 숫자의 '갯수'를 입력해주세요."));
+      var number = [];
+      var result = 0;
+      var i = 0;
+      //입력할 숫자 반복문//
+      while (i < ask) {
+        input();
+        i++;
+      }
+      //숫자 배열에 추가하는거//
+      function input() {
+        var inputNumber = Number(prompt("숫자를 입력해주세요."));
+        number.push(inputNumber);
+      }
+      // 짝수 분리하는 계산기//
+      function carculator() {
+        for (j = 0; j <= number.length; j++) {
+          if (number[j] % 2 === 0) {
+            result += number[j];
+          } else {
+            continue;
+          }
+        }
+        return result;
+      }
+      document.getElementById("demo").innerHTML =
+        "입력하신 숫자" + "<br>" + number;
+      document.getElementById("demo1").innerHTML =
+        "짝수의 합계는" + "<br>" + carculator();
+    </script>
+  </body>
+</html>

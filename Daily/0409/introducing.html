@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="demo"></p>
+    <script>
+      var na = {
+        name: "나현규",
+        age: 23,
+        hometown: "Seocheon",
+        gender: "male",
+        introducing: function () {
+          return (
+            "안녕하세요. 저는 " +
+            this.name +
+            "입니다. <br>나이는 " +
+            this.age +
+            "살이고, 성별은 " +
+            this.gender +
+            "입니다. <br>고향은 " +
+            this.hometown +
+            "입니다."
+          );
+        },
+      };
+
+      document.getElementById("demo").innerHTML = na.introducing();
+    </script>
+  </body>
+</html>

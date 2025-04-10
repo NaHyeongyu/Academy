@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <script>
+      let merry1 = {
+        name: "merry",
+        age: 13,
+        say: function () {
+          document.getElementById("demo").innerHTML =
+            "My name is " +
+            this.name +
+            "<br>and I'm " +
+            this.age +
+            " years old";
+        },
+      };
+      merry1.say();
+
+      let merry2 = {
+        name: "",
+        age: "",
+        say: function (name, age) {
+          this.name = name;
+          this.age = age;
+          document.getElementById("demo1").innerHTML =
+            "My name is " +
+            this.name +
+            "<br>and I'm " +
+            this.age +
+            " years old";
+        },
+      };
+      merry2.say("manggo", 4);
+
+      function Merry3(name, age) {
+        this.name = name;
+        this.age = age;
+        this.say = function () {
+          document.getElementById("demo2").innerHTML =
+            "My name is " +
+            this.name +
+            "<br>and I'm " +
+            this.age +
+            " years old";
+        };
+      }
+
+      var print = new Merry3("Sofia", 7);
+      print.say();
+    </script>
+  </body>
+</html>

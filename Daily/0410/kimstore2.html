@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>계산서</h1>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <script>
+      function Apple(name, count, price) {
+        this.name = name;
+        this.count = count;
+        this.price = Number(price);
+        this.price1 = this.price
+          .toString()
+          .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+        this.print = function () {
+          document.getElementById("demo").innerHTML =
+            this.name + " " + count + " " + this.price1 + " 입니다.";
+        };
+      }
+      function Bread(name, count, price) {
+        this.name = name;
+        this.count = count;
+        this.price = price;
+        this.price1 = this.price
+          .toString()
+          .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+        this.print = function () {
+          document.getElementById("demo1").innerHTML =
+            this.name + " " + count + " " + this.price1 + " 입니다.";
+        };
+      }
+      function Icecream(name, count, price) {
+        this.name = name;
+        this.count = count;
+        this.price = price;
+        this.price1 = this.price
+          .toString()
+          .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+        this.print = function () {
+          document.getElementById("demo2").innerHTML =
+            this.name + " " + count + " " + this.price1 + " 입니다.";
+        };
+      }
+
+      var apple = new Apple("사과", "2kg", 10000);
+      var bread = new Bread("소보로빵", "10개", 4000);
+      var icecream = new Icecream("브라보 아이스크림", "2개", 10000);
+
+      apple.print();
+      bread.print();
+      icecream.print();
+    </script>
+  </body>
+</html>
