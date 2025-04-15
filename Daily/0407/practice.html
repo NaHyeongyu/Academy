@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      * {
+        font-family: "NanumGothicCoding";
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      //입력받은 학생수 만큼의 이름, 국어 점수, 영어 점수, 수학 점수를 입력 받아 나열!
+      var score = [];
+      var numbering = parseInt(prompt("입력할 학생수를 적으시오.", "0"));
+      var input = function () {
+        var name = prompt("이름을 입력하시오.", "홍길동");
+        var korean = Number(prompt("국어 점수를 입력하시오.", "100"));
+        var english = Number(prompt("영어 점수를 입력하시오.", "100"));
+        var math = Number(prompt("수학 점수를 입력하시오.", "100"));
+        score.push(name);
+        score.push(korean);
+        score.push(english);
+        score.push(math);
+      };
+      i = 0;
+      while (i < numbering) {
+        input();
+        i++;
+      }
+      i = 0;
+      while (i < numbering) {
+        document.write("이름 : " + score[i * 4] + "<br><br>");
+        document.write("국어 점수 : " + score[i * 4 + 1] + " 점<br>");
+        document.write("영어 점수 : " + score[i * 4 + 2] + " 점<br>");
+        document.write("수학 점수 : " + score[i * 4 + 3] + " 점<br><br>");
+        document.write(
+          "합계 점수 : " +
+            (score[i * 4 + 1] + score[i * 4 + 2] + score[i * 4 + 3]) +
+            " 점<br>"
+        );
+        document.write(
+          "평균 점수 : " +
+            Math.round(
+              (score[i * 4 + 1] + score[i * 4 + 2] + score[i * 4 + 3]) / 3
+            ) +
+            " 점<br>"
+        );
+        document.write("<br><br><br><br><br>");
+        i++;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <p id="demo"></p>
+    <script>
+      const myNumbers = [4, 1, -20, -7, 5, 9, -6];
+      const posNumbers = removeNeg(myNumbers, function (x) {
+        return x >= 0;
+      });
+      document.getElementById("demo").innerHTML = posNumbers;
+      function removeNeg(numbers, callback) {
+        const myArray = [];
+        for (const x of numbers) {
+          if (callback(x)) {
+            myArray.push(x);
+          }
+        }
+        return myArray;
+      }
+    </script>
+  </body>
+</html>

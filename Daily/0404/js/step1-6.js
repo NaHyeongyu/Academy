@@ -9,18 +9,18 @@ for (var i = 0; i < test_score1.length; i++) {
     max = test_score1[i];
   }
 }
-document.getElementById("demo1").innerHTML = "max = " + max;
+document.getElementById("max").innerHTML = "max = " + max;
 
 for (var i = 0; i < test_score1.length; i++) {
   if (min >= test_score1[i]) {
     min = test_score1[i];
   }
 }
-document.getElementById("demo2").innerHTML = "min = " + min;
+document.getElementById("min").innerHTML = "min = " + min;
 
 for (var i = 0; i < test_score1.length; i++) {
   sum += test_score1[i];
 }
 avg = sum / test_score1.length;
-document.getElementById("demo3").innerHTML = "avg = " + avg;
-document.getElementById("demo4").innerHTML = "sum = " + sum;
+document.getElementById("avg").innerHTML = "avg = " + avg;
+document.getElementById("sum").innerHTML = "sum = " + sum;

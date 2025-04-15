@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="demo"></p>
+    <button id="total">Total price</button>
+    <script>
+      var products = [];
+      var totalPrice = 0;
+
+      function scan(product, count, price) {
+        products.push({ name: product, count: count });
+        totalPrice += Number(price);
+      }
+
+      function print() {
+        let output = "";
+        for (let i = 0; i < products.length; i++) {
+          output += products[i].name + " " + products[i].count + ",<br>";
+        }
+
+        var finalPrice = totalPrice
+          .toString()
+          .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+        document.getElementById("demo").innerHTML =
+          output + "<br>총 가격은 " + finalPrice + " 입니다.";
+      }
+
+      document.getElementById("total").onclick = print;
+      document.getElementsByClassName;
+    </script>
+  </body>
+</html>
