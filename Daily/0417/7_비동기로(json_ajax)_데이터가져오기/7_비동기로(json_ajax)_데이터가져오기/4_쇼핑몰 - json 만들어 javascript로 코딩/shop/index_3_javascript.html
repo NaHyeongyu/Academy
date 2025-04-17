@@ -1,0 +1,237 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
+
+
+   
+<script>
+
+        $(function(){
+
+            $.ajax({
+
+                url: "./json/hit.json",
+
+                dataType: "json",
+
+                success : function(data){
+
+                    if(data.length>0){
+
+              
+                 
+                        for(var i in data){
+                            var title = data[i].title;
+                            var subtitle2 = data[i].subtitle;
+                            var price = data[i].price;
+                            var url = data[i].url;
+                            
+                             $(".box").eq(i).append( '<div><a href="#">'+"<img src='img/hit/"+data[i].url+"'/>"+'</a></div>'); 
+
+
+                                                
+
+
+                             $(".box").eq(i).append('<h5><a href="#">'+data[i].title+"</a><h5>");      
+    
+                             $(".box").eq(i).append('<p><a href="#">'+data[i].subtitle+"</a></p>");                             
+
+                             $(".box").eq(i).append("<span>"+data[i].price+"</span>");
+ 
+
+
+
+                             //review random count
+
+                             var count = Math.floor(Math.random() * 100);
+                             $(".box").eq(i).append("<button>"+count+" REVIEWS"+"</button>");
+
+
+
+
+                              // img
+
+                             $(".box > div").attr("width", "270");
+                             $(".box > div").attr("height", "270");
+                   
+                             $(".box > div").css("overflow", "hidden");
+
+
+
+                             $(".box > div > a > img").attr("width", "270");
+                             $(".box > div > a > img").attr("height", "270");
+                             $(".box > div > a > img").attr("alt", "상품사진");
+
+
+
+
+
+                             $(".box > div > a > img").hover(function(){
+                                   $(this).attr("width", "270").attr("height", "270").css({"opacity":"0.6", "display":"inline"});
+                              },
+                               function(){
+                                   $(this).attr("width", "270").attr("height", "270").css({"opacity":"1" , "display":"inline"});
+                             });
+
+
+
+
+
+
+                             $(".box>h5>a").css({"font-size": "12px",  "height":"20px", "margin": "0px",  "marginTop": "-15px", "marginRight": "15px" , "marginLeft": "15px" ,"color":"#000",  "text-align":"left", "text-decoration":"none", "display":"block" });
+
+
+                             $(".box>p>a").css({"border-bottom": "1px solid #eee", "marginRight": "15px" ,"marginTop": "-35px",  "marginLeft": "15px", "font-size": "12px", "color":"#666", "line-height": "45px", "text-align":"left", "text-decoration":"none", "display":"block"});
+
+                             $(".box>span").css({"font-size": "11px", "marginLeft": "15px" , "marginRight": "15px",  "float":"left"});
+                             $(".box>button").css({"font-size": "11px", "border-radius":" 3px" , "border":"none" ,  "background" : "#ba7112" , "padding" : "5px" , "color" : "#fff" , "marginRight": "15px",  "float":"right" , "cursor":"pointer"});
+         
+
+                     
+
+                        }
+
+                    }
+
+                }
+
+            });
+
+
+        });
+
+
+    </script>
+
+
+
+    
+</head>
+
+
+<body>
+    <main>
+
+       <h3 id="title"></h3>
+
+       <section>
+
+           <article>
+            <div class="box"></div>
+
+            <div class="box"></div>
+
+            <div class="box"></div>
+
+            <div class="box"></div>
+
+            <div class="box"></div>
+
+            <div class="box"></div>
+
+            <div class="box"></div>
+
+            <div class="box"></div>
+
+        </article>
+
+    </section>
+
+
+</main>
+
+    <script>
+
+     window.onload = function (){
+        // 전체 폰트,배경색깔
+        document.body.style.fontFamily = "Charcoal,sans-serif";
+        document.body.style.backgroundColor ="#eee";
+
+
+
+     
+
+
+        // title
+        var title =document.getElementById("title")
+        title.innerHTML = "HIT OF HITS";
+        title.style.color ="green";
+        title.style.fontSize ="30px";
+        title.style.width = "100%";
+        title.style.textAlign = "center";
+        title.style.letterSpacing = "10px";
+        title.style.fontFamily = "Impact";
+        title.margin = "0";
+
+
+
+        // sub title
+
+        var subtitle = document.createElement("p");
+        var textnode = document.createTextNode(" 히트조명의 인기 상품");
+        subtitle.appendChild(textnode);
+        title.appendChild(subtitle);
+        subtitle.style.color ="#666";
+        subtitle.style.fontSize ="13px";
+        subtitle.style.margin = "0";
+
+
+
+
+        //article
+
+        var article = document.getElementsByTagName("article")[0];
+        article.style.width = "1200px";
+        article.style.height = "900px";
+        article.style.textAlign = "center";
+        article.style.border = "solid 1px #999";
+        article.style.margin = "0 auto";
+
+
+
+
+
+
+
+        //box
+
+        var boxs = document.getElementsByClassName('box');
+
+
+        for(var i=0; i<boxs.length; i++){
+
+            boxs[i].boxSizing="border-box";
+            boxs[i].style.width = "270px";
+            boxs[i].style.height = "380px";
+            boxs[i].style.border = "solid 1px #ddd";
+            boxs[i].style.backgroundColor ="#fff";
+            boxs[i].style.margin = "20px 10px";
+            boxs[i].style.display="inline-block";
+            boxs[i].style.boxShadow = "4px 4px 4px #ddd";
+
+        }
+
+
+
+      
+
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+   
+
+</body>
+</html>
+

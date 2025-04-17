@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Vanilla JS 심플 버전</title>
+    <style>
+        body {
+            font-family: 'Charcoal', sans-serif;
+            background-color: #eee;
+            text-align: center;
+        }
+        #title {
+            color: green;
+            font-size: 30px;
+            letter-spacing: 10px;
+            font-family: Impact;
+            margin-bottom: 5px;
+        }
+        #subtitle {
+            color: #666;
+            font-size: 13px;
+            margin-top: 0;
+        }
+        article {
+            width: 1200px;
+            margin: 0 auto;
+            border: 1px solid #999;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .box {
+            box-sizing: border-box;
+            width: 270px;
+            height: 380px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            box-shadow: 4px 4px 4px #ddd;
+            padding: 10px;
+        }
+        .box img {
+            width: 100%;
+            height: 270px;
+            object-fit: cover;
+            transition: opacity 0.3s;
+        }
+        .box img:hover {
+            opacity: 0.6;
+        }
+        .box h5, .box p {
+            margin: 5px 0;
+        }
+        .box a {
+            text-decoration: none;
+            font-size: 12px;
+        }
+        .box h5 a {
+            color: #000;
+        }
+        .box p a {
+            color: #666;
+        }
+        .box span {
+            display: block;
+            font-size: 11px;
+            margin: 5px 0;
+        }
+        .box button {
+            font-size: 11px;
+            border-radius: 3px;
+            border: none;
+            background: #ba7112;
+            padding: 5px;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h3 id="title">HIT OF HITS</h3>
+    <p id="subtitle">히트조명의 인기 상품</p>
+
+    <article id="product-container"></article>
+
+    <script>
+        async function loadProducts() {
+            try {
+                const res = await fetch("https://dino-21.github.io/0504_05/json/hit.json");
+                if (!res.ok) throw new Error("데이터 로드 실패");
+                const data = await res.json();
+                const container = document.getElementById('product-container');
+
+                container.innerHTML = data.map(item => `
+                    <div class="box">
+                        <img src="img/hit/${item.url}" alt="상품사진">
+                        <h5><a href="#">${item.title}</a></h5>
+                        <p><a href="#">${item.subtitle}</a></p>
+                        <span>${item.price}</span>
+                        <button>${Math.floor(Math.random() * 100)} REVIEWS</button>
+                    </div>
+                `).join('');
+
+            } catch (error) {
+                console.error("오류 발생:", error);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", loadProducts);
+    </script>
+</body>
+</html>

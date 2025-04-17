@@ -1,0 +1,21 @@
+비동기 데이터 요청 방식
+
+1 AJAX  / JQuery cdn필요
+
+2 fetch / ES6 문법
+
+3 Axios  / Axios cdn필요
+
+​
+
+https://dino-21.github.io/http_requests/
+
+​
+
+​
+
+https://dino-21.github.io/http_requests/1_ajax.html
+
+https://dino-21.github.io/http_requests/2_fetch2.html
+
+https://dino-21.github.io/http_requests/3_Axios.html

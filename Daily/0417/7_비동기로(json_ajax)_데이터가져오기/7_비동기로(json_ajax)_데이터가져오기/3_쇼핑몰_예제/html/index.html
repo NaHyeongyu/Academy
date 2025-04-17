@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page Title</title>
+    <style>
+      /*reset*/
+      * {margin:0; box-sizing:border-box;}
+      a {text-decoration:none; color:#000;}
+      #product {width:1000px; height:800px; margin:0 auto; border:2px solid #eee;}
+      #product > h3 {font-size:20px; color:green; text-align:center; line-height:50px; letter-spacing:10px;}
+      #product > p {font-size:17px; color:#000; text-align:center; line-height:30px;}
+      #product > .box {width:200px; height:300px;  float:left; margin:20px 15px; border:1px solid #ddd; border-radius:20px; overflow:hidden; padding:5px; text-align:center;}
+      #product > .box:hover {box-shadow:4px 4px 4px #ddd;} 
+      #product > .box > a > img {width:100%; height:200px; border-radius:20px;}
+      #product > .box > h4 > a {font-size:13px;}
+      #product > .box > h4 > a:hover {color:green;} 
+      #product > .box > span > a {font-size:12px; display:block;}
+      #product > .box > span::after {content:"sale!"; color:white; font-size:11px; background-color:tomato; padding:2px;}
+
+
+    </style>
+
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
+
+  </head>
+  <body>
+    <!-- 신상품-->
+    <div id="product">
+      <h3>오늘의 상품</h3>
+      <p>새로운 상품을 만나 보세요.</p>
+
+  
+      <div class="box">
+       
+      </div>
+
+      <div class="box">
+       
+
+      </div>
+
+
+      <div class="box">
+
+       
+      </div>
+
+
+      <div class="box">
+
+     
+      </div>
+
+
+      <div class="box">
+        
+      </div>
+
+      <div class="box">
+       
+
+      </div>
+
+
+      <div class="box">
+
+       
+      </div>
+
+
+      <div class="box">
+
+    
+      </div>
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+  <script>
+
+      $(function(){
+
+        $.ajax({
+
+          url: "./json/product.json",
+
+          dataType: "json",
+
+          success : function(data){
+
+            if(data.length>0){
+
+
+
+              for(var i in data){
+            
+
+                $(".box").eq(i).append( '<a href="#">'+"<img src='img/"+data[i].url+"'/>"+'</a>'); 
+
+                $(".box").eq(i).append('<h4><a href="#">'+data[i].title+"</a><h4>");                               
+
+                $(".box").eq(i).append("<span>"+data[i].price+"</span>");
+
+
+              }
+
+            }
+
+          }
+
+        });
+
+
+      });
+
+
+    </script>
+
+
+
+  </body>
+</html>

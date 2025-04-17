@@ -1,0 +1,13 @@
+OPEN API 홈페이지
+
+카카오 API 홈페이지 : https://developers.kakao.com
+
+네이버 API 홈페이지 : https://developers.naver.com/
+
+구글 API 홈페이지 : https://console.developers.google.com
+
+페이스북 API 홈페이지 : https://developers.facebook.com/
+
+공공데이터 포털 : https://www.data.go.kr/
+
+경기데이타드림 : https://data.gg.go.kr/portal/mainPage.do
