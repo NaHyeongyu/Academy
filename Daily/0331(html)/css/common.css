@@ -1,12 +1,14 @@
 @charset "utf-8";
 header {
   width: 100%;
-  height: 168px;
+  height: auto;
+  position: relative;
   /* display: flex;
     flex-direction: column;
     background-color: red; */
 }
 .headertop {
+  margin-top: 8px;
   width: 1200px;
   height: 35px;
 }
@@ -16,7 +18,11 @@ header {
 }
 .headerbottom {
   width: 1200px;
-  height: 47px;
+  height: 52px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: white;
 }
 .topmenu1 {
   width: 464px;
@@ -30,9 +36,9 @@ header {
   align-items: center;
 }
 .topmenu1right {
-  float: right;
+  float: left;
   display: flex;
-  margin-right: 60px;
+  margin-left: 1%;
 }
 .topmenu1 > .topmenu1left > a {
   font-size: 12px;
@@ -81,31 +87,70 @@ p {
 .category {
   width: 160px;
   height: 34px;
-  border-radius: 24px;
+  border-radius: 20px;
   background-color: #dd3454;
   float: left;
-  display: flex;
+  /* display: flex;
   flex-direction: row;
-  align-items: center;
-  margin-top: 7px;
+  align-items: center; */
+  margin-top: 8px;
+}
+.subcategory {
+  display: flex;
+  flex-direction: column;
+}
+.subcategory > li {
+  /* display: none; */
+  float: right;
 }
 .category > span {
   color: white;
-  font-size: 14px;
-  font-weight: bold;
+  font-size: 15 px;
+  float: left;
+  margin: 8px 0 0 24px;
 }
-.category > .categoryimg {
+
+.main-category {
+  width: 160px;
+  background-color: #f5f5f5;
+}
+.category .categorydetail {
+  /* display: none; */
+  width: 500px;
+  height: 400px;
+  position: absolute;
+  background-color: white;
+  z-index: 10;
+  margin-top: 40px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-top: 3px solid #dd3454;
+  display: none;
+}
+
+.category > .categoryimgl {
+  width: 20px;
+  height: 20px;
+  float: left;
+}
+.category > .categoryimgl > img {
+  width: 100%;
+  height: 100%;
+  margin: 6px 0 0 16px;
+}
+.category > .categoryimgr {
   width: 16px;
   height: 16px;
+  float: right;
+  margin: 9px 10px 0 0;
 }
-.category > .categoryimg > img {
+.category > .categoryimgr > img {
   width: 100%;
   height: 100%;
 }
 nav {
   width: 600px;
   float: left;
-  margin: 9px 0px 0px 0px;
+  margin: 11px 0px 0px 0px;
 }
 nav > ul {
   display: flex;
@@ -116,8 +161,7 @@ nav > ul {
 }
 nav > ul > li > a {
   color: #242529;
-  font-size: 15px;
-  font-weight: bold;
+  font-size: 16px;
 }
 nav > ul > li > a:hover {
   color: #dd3454;
