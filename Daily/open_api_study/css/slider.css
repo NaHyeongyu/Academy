@@ -1,0 +1,17 @@
+.sliderAll {
+  height: 480px;
+  width: 100%;
+}
+#slider {
+  height: 380px;
+  width: 100%;
+  background-color: plum;
+  display: flex;
+  gap: 100px;
+}
+#slider > a > img {
+  width: 684px;
+  height: 430px;
+  border-radius: 16px;
+  margin-top: 40px;
+}

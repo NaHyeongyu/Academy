@@ -5,7 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>영풍문고</title>
     <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/slider.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/todaysbooks.js"></script>
   </head>
   <body>
     <header>
@@ -40,11 +47,13 @@
       </div>
       <!-- 상단 로고,검색,광고 -->
       <div class="headerSecond">
+        <!-- 로고 -->
         <div class="logo">
-          <a href="index.html"
-            ><img src="img/header/yp_logo.png" alt="logo"
-          /></a>
+          <a href="index.html">
+            <img src="img/header/yp_logo.png" alt="logo" />
+          </a>
         </div>
+
         <!-- 검색창 -->
         <div class="finder">
           <div class="search">
@@ -53,6 +62,9 @@
               id="finder"
               placeholder="APP에서는 매일 적립금 지급!"
             />
+            <button class="search-icon">
+              <img src="img/header/searchicon.png" alt="search" />
+            </button>
           </div>
           <div class="recommandWords">
             <ul>
@@ -64,20 +76,179 @@
             </ul>
           </div>
         </div>
+
+        <!-- 광고 -->
         <div class="advertise">
-          <img src="img/header/ad_book.jpg" alt="#" />
-          <div class="adDetails">
-            <span class="adMark">AD</span> <span class="adTitle">title</span
-            ><span class="adDetails">detail</span>
+          <img src="img/header/ad_book.jpg" alt="광고 이미지" />
+          <div class="adDetail">
+            <span class="adMark">AD</span>
+            <span class="adTitle">내면소통 명상수업</span>
+            <span class="adDetails">마음근력 향상을 위한 명상 가이드</span>
+            <img src="img/header/nexticon.png" alt="next" />
+            <img src="img/header/backicon.png" alt="back" />
           </div>
         </div>
       </div>
     </header>
-    <div id="nav"></div>
-    <div id="slider"></div>
-    <div id="quickMenu"></div>
-    <div id="today's"></div>
-    <div id="week's"></div>
-    <footer></footer>
+    <div class="navAll">
+      <div id="nav">
+        <div class="category">
+          <img src="img/main/categoryicon.png" alt="" />
+          <span>전체 카테고리</span>
+        </div>
+        <div class="navLeft">
+          <ul>
+            <li><a href="#">베스트</a></li>
+            <li><a href="#">신상품</a></li>
+            <li><a href="#">추천</a></li>
+            <li><a href="#">기프티콘</a></li>
+          </ul>
+        </div>
+        <div class="navRight">
+          <ul>
+            <li><a href="#">혜택</a></li>
+            <li><a href="#">사은품</a></li>
+            <li><a href="#">문화행사</a></li>
+            <li><a href="#">이벤트</a></li>
+            <li><a href="#">출석체크</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="sliderAll">
+      <div id="slider">
+        <a href="#"><img src="img/main/slider1.jpg" alt="slider" /></a>
+        <a href="#"><img src="img/main/slider2.png" alt="slider" /></a>
+        <a href="#"><img src="img/main/slider3.jpg" alt="slider" /></a>
+        <a href="#"><img src="img/main/slider4.jpg" alt="slider" /></a>
+      </div>
+    </div>
+    <div class="newbook"></div>
+    <div class="lately"></div>
+    <div id="quickMenu">
+      <span class="title">바로가기</span>
+      <div class="service">
+        <span>영풍문고 서비스</span>
+        <span>즐겨찾는 분야</span>
+        <span class="setting">설정하기<img src="" alt="" /></span>
+      </div>
+      <div class="serviceList"></div>
+    </div>
+    <div id="todays">
+      <div class="introduce">
+        <span class="title">오늘의 책이에요</span>
+        <span class="date"></span>
+      </div>
+      <div class="todaysbooks">
+        <!-- <div class="bookbox"> 첫번쨰 예시
+          <div id="books">
+            <div class="cover">
+              <a href="#"><img src="img/main/book1.jpg" alt="" /></a>
+            </div>
+            <div class="bookinfo">
+              <h3 id="booktitle">줬으면 그만이지-아름다운 부자..</h3>
+              <h4 id="writer">김주완</h4>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+    <div id="weeks">
+      <div class="introduce">
+        <span class="title">주간 베스트 셀러에요</span>
+        <span class="week"></span>
+      </div>
+      <div class="type">
+        <ul>
+          <li><button>종합</button></li>
+          <li><button>국내소설</button></li>
+          <li><button>외국소설</button></li>
+          <li><button>비소설</button></li>
+          <li><button>경제경영</button></li>
+          <li><button>인문과학</button></li>
+          <li><button>어린이</button></li>
+          <li><button>외국어</button></li>
+          <li><button>자기계발</button></li>
+          <li><button>유아</button></li>
+          <li><button>가정/생활/요리</button></li>
+          <li><button>청소년</button></li>
+          <li><button>만화</button></li>
+        </ul>
+      </div>
+      <div class="bookbox2">
+        <div class="book2">
+          <div class="activebook">
+            <a href="#"><img src="img/main/book1.jpg" alt="" /></a>
+            <span class="ranking">01</span>
+            <span class="weekbooktitle">줬으면 그만이지-아름다운 부자</span>
+            <span class="weekbookwriter">김주완</span>
+            <div class="weekbooktag">
+              <ul>
+                <li><span>#선행</span></li>
+                <li><span>#나눔</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="waiting"></div>
+        </div>
+      </div>
+    </div>
+    <div id="hotbook">
+      <div class="introduce">
+        <span class="title">화제의 신간이에요</span>
+      </div>
+      <div class="type">
+        <ul>
+          <li><button>종합</button></li>
+          <li><button>소솔/에세이/시</button></li>
+          <li><button>자녀교육/건강/여행/요리</button></li>
+          <li><button>유아/어린이/초등학습</button></li>
+          <li><button>중/고학습</button></li>
+          <li><button>인문/역사</button></li>
+          <li><button>외국어</button></li>
+          <li><button>예술</button></li>
+          <li><button>경제/자기계발</button></li>
+          <li><button>자연/과학</button></li>
+        </ul>
+      </div>
+      <div class="bookbox">
+        <div id="books">
+          <div class="cover">
+            <a href="#"><img src="img/main/book1.jpg" alt="" /></a>
+          </div>
+          <div class="bookinfo">
+            <h3 id="booktitle">줬으면 그만이지-아름다운 부자..</h3>
+            <h4 id="writer">김주완</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="banner2">
+      <div class="banner2img">
+        <a href="#"><img src="img/main/banner2.png" alt="banner" /></a>
+      </div>
+    </div>
+    <footer>
+      <div class="footerall">
+        <div class="footertop">
+          <div class="footertopleft">
+            <span class="servicecenter">고객센터</span>
+            <span class="phonenumber">1544-9020</span>
+            <span class="footerleftdetailleft">상담가능시간</span>
+            <span class="footerleftdetailleft">대표 메일</span>
+            <span class="footerleftdetailleft">대량 주문</span>
+            <span class="footerleftdetailright"
+              >평일 09:00 ~ 18:00 / 점심시간 12:15 ~ 13:15</span
+            >
+            <span class="footerleftdetaillright">customer@ypbooks.co.kr</span>
+            <span class="footerleftdetaillright">webmaster@ypbooks.co.kr</span>
+          </div>
+          <div class="footertopright"></div>
+        </div>
+        <div class="footerbottom">
+          <img src="img/header/yp_logo.png" alt="" />
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
