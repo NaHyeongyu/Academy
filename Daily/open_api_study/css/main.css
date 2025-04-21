@@ -34,12 +34,65 @@
 }
 #quickMenu {
   width: 1060px;
+  margin-top: 160px;
 }
+.quickicon > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 28px;
+}
+.quickicon > ul > li {
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+.quickicon > ul > li > span {
+  font-size: 13px;
+  color: #000000;
+  margin-top: 8px;
+}
+
+.iconbox {
+  width: 64px;
+  height: 64px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background-color: #f6f6f6;
+}
+
+.iconbox > img {
+  width: 48px;
+  height: 48px;
+  display: block;
+  border-radius: 50px;
+}
+
 .title {
   font-size: 22px;
   font-weight: 600;
 }
+.service {
+  margin-top: 12px;
+}
 #quickMenu > .service > span {
+  font-size: 14px;
+  margin-right: 12px;
+  color: #80888a;
+}
+#quickMenu > .service > .servicechecked {
+  font-size: 14px;
+  font-weight: 700;
+  margin-right: 12px;
+  color: rgb(74, 175, 112);
+}
+#quickMenu > a {
+  color: #80888a;
   font-size: 14px;
 }
 .setting {
@@ -56,6 +109,7 @@
 }
 #todays {
   width: 1060px;
+  margin-top: 100px;
 }
 .introduce {
   width: 1069px;
@@ -75,20 +129,27 @@
   width: 100%;
 }
 
-.type > ul {
+.hottype > ul {
   width: 1060px;
   margin: 20px auto 40px auto;
   gap: 0;
 }
-.type > ul > li {
+.hottype > ul > li {
   display: inline;
   margin-right: 10px;
 }
-.type > ul > li > button {
+.hottype > ul > li > button {
   padding: 10px 12px;
   border-radius: 16px;
   background-color: #f6f6f6;
   color: #80888a;
+  border: none;
+}
+.hottype > ul > li > .hottypechecked {
+  padding: 10px 12px;
+  border-radius: 16px;
+  background-color: rgb(74, 175, 112);
+  color: #f6f6f6;
   border: none;
 }
 .bookbox2 {
@@ -154,3 +215,46 @@
 .banner2 > .banner2img > a > img {
   height: 120px;
 }
+#hotbook {
+  width: 1060px;
+  margin-top: 100px;
+}
+.hotbooks {
+  width: 1060px;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  justify-content: space-between;
+}
+#popular {
+  width: 1060px;
+  margin-top: 100px;
+}
+#mdrecommand {
+  width: 1060px;
+  margin-top: 100px;
+}
+
+/* .hottype > ul {
+  width: 1060px;
+  margin: 20px auto 40px auto;
+  gap: 0;
+}
+.hottype > ul > li {
+  display: inline;
+  margin-right: 10px;
+}
+.hottype > ul > li > button {
+  padding: 10px 12px;
+  border-radius: 16px;
+  background-color: #f6f6f6;
+  color: #80888a;
+  border: none;
+}
+.hottype > ul > li > .hottypechecked {
+  padding: 10px 12px;
+  border-radius: 16px;
+  background-color: rgb(74, 175, 112);
+  color: #f6f6f6;
+  border: none;
+} */

@@ -45,6 +45,7 @@
   font-size: 16px;
   font-weight: 500;
 }
+
 .navRight > ul {
   display: flex;
   flex-direction: row;
