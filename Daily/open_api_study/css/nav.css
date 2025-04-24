@@ -1,8 +1,9 @@
 .navAll {
   width: 100%;
   height: 48px;
-  background-color: plum;
+  background-color: rgb(74, 175, 112);
   border-bottom: white solid 0.5px;
+  /* background-color transition handled in slider.css for fade effect */
 }
 #nav {
   width: 1060px;
