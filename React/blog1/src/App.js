@@ -1,12 +1,27 @@
+import React, { useEffect, useState } from "react";
+
 function App() {
-  let res = "";
-  const loginName = "이순신";
-  if (loginName === "이순신") {
-    res = <div>이순신입니다.</div>;
-  } else {
-    res = <div>비회원 입니다.</div>;
-  }
-  return <>{res}</>;
+  const [post, setPost] = useState(null);
+
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/posts/1")
+      .then((response) => response.json())
+      .then((data) => setPost(data));
+  }, []);
+
+  return (
+    <div>
+      <h1>게시글 정보</h1>
+      {post ? (
+        <>
+          <h2>{post.title}</h2>
+          <p>{post.body}</p>
+        </>
+      ) : (
+        <p>로딩 중...</p>
+      )}
+    </div>
+  );
 }
 
 export default App;
