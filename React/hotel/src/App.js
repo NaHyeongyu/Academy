@@ -1,12 +1,16 @@
-import logo from "./logo.svg";
+//CSS
 import "./App.css";
-import GlobalStyle from "./styles/GlobalStyle";
-import Header from "./components/Header";
+import "./styles/GlobalStyle.js";
+//bootstrap
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+//Router
+import Router from "./routes/Router.js";
+
 function App() {
   return (
     <>
-      <GlobalStyle />
-      <Header />
+      <Router></Router>
     </>
   );
 }

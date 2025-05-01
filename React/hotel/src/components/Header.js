@@ -1,168 +1,26 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-
-const HeaderAll = styled.header`
-  width: 100%;
-  height: 180px;
-  background-color: white;
-  position: fixed;
-  top: 0;
-  z-index: 999;
-  padding: 30px 0px;
-`;
-const HeaderItem = styled.div`
-  height: 120px;
-  width: 100%;
-  background-color: white;
-  padding: 0 80px;
-`;
-const TopBar = styled.div`
-  width: 100%;
-  height: 60px;
-  background-color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-const Logo = styled.div`
-  font-size: 32px;
-  font-weight: bold;
-  color: #502875;
-  font-family: "Vitro-Inspire";
-`;
-const CsMenu = styled.ul`
-  display: flex;
-  font-size: 14px;
-  gap: 20px;
-  li {
-    color: #111111;
-    position: relative;
-    padding-right: 20px;
-
-    &::after {
-      content: "|";
-      position: absolute;
-      right: 0;
-      color: grey;
-      font-size: 13px;
-    }
-
-    &:last-child::after {
-      content: "";
-    }
-  }
-`;
-
-const BottomBar = styled.div`
-  width: 100%;
-  height: 60px;
-  background-color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const BottomNav = styled.ul`
-  display: flex;
-  gap: 40px;
-
-  li {
-    font-size: 18px;
-    font-weight: bold;
-    color: #111111;
-    cursor: pointer;
-    transition: color 0.6s ease;
-    &:last-child {
-      color: #8a57c1;
-    }
-    &:hover {
-      color: #8a47c1;
-    }
-  }
-`;
-
-const BookBtn = styled.button`
-  background-color: #e6af1b;
-  border: none;
-  padding: 14px 40px;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 16px;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.6s ease;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  &:hover {
-    background-color: #8a47c1;
-  }
-  img {
-    width: 18px;
-    margin-top: 2px;
-  }
-`;
-
-const Overlay = styled.div`
-  position: fixed;
-  top: 180px;
-  left: 0;
-  width: 100%;
-  height: calc(100% - 180px);
-  background-color: rgba(0, 0, 0, 0.5);
-  opacity: ${({ active }) => (active ? 1 : 0)};
-  visibility: ${({ active }) => (active ? "visible" : "hidden")};
-  transition: all 0.3s ease;
-  z-index: 100;
-`;
-
-const SubMenu = styled.div`
-  position: absolute;
-  top: 180px;
-  left: 0;
-  width: 100%;
-  background-color: white;
-  padding: 40px 0;
-  opacity: ${({ active }) => (active ? 1 : 0)};
-  visibility: ${({ active }) => (active ? "visible" : "hidden")};
-  transition: all 0.3s ease;
-  z-index: 101;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const HoverArea = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
+import GlobalStyle from "../styles/GlobalStyle.js";
+import { useNavigate } from "react-router-dom";
 function Header() {
-  const [isHovering, setIsHovering] = useState(false);
-
+  const navigate = useNavigate();
   return (
-    <HeaderAll>
-      <Overlay active={isHovering} />
-      <HeaderItem>
-        <TopBar>
-          <Logo>INSPIRE</Logo>
-          <CsMenu>
-            <li>고객센터</li>
-            <li>대관문의</li>
-            <li>오시는 길</li>
-            <li>가입하기</li>
-            <li>로그인</li>
-          </CsMenu>
-        </TopBar>
-        <BottomBar>
-          <HoverArea
-            onMouseEnter={() => setIsHovering(true)}
-            onMouseLeave={() => setIsHovering(false)}
-          >
-            <BottomNav>
+    <>
+      <GlobalStyle></GlobalStyle>
+      <HeaderWrapper>
+        <HeaderItems>
+          <TopBar>
+            <Logo onClick={() => navigate("/")}>INSPIRE</Logo>
+            <CsMenu>
+              <li>고객센터</li>
+              <li>대관문의</li>
+              <li>오시는 길</li>
+              <li>회원가입</li>
+              <li>로그인</li>
+            </CsMenu>
+          </TopBar>
+          <BottompBar>
+            <MainNav>
               <li>OFFERS</li>
               <li>STAY</li>
               <li>EAT & DRINK</li>
@@ -172,18 +30,128 @@ function Header() {
               <li>MEET</li>
               <li>CASINO</li>
               <li>MOMENTUM</li>
-            </BottomNav>
-            <SubMenu active={isHovering}>
-              <img src="/img/calendaricon.png" alt="Submenu Image" />
-            </SubMenu>
-          </HoverArea>
-          <BookBtn>
-            <img src="/img/calendaricon.png"></img>
-            BOOK NOW
-          </BookBtn>
-        </BottomBar>
-      </HeaderItem>
-    </HeaderAll>
+              <QuickBook>
+                <img src="/img/header/calendaricon.png"></img>예약하기
+              </QuickBook>
+            </MainNav>
+          </BottompBar>
+        </HeaderItems>
+      </HeaderWrapper>
+    </>
   );
 }
+
 export default Header;
+
+const HeaderWrapper = styled.header`
+  width: 100%;
+  background-color: white;
+  padding: 20px 0;
+  position: fixed; // 화면 상단 고정
+  top: 0; // 꼭대기에 붙이기
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: white;
+`;
+
+const HeaderItems = styled.div`
+  margin: 0 auto;
+  padding: 0 24px;
+  max-width: 1488px;
+`;
+const TopBar = styled.div`
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  margin: 0 auto;
+`;
+
+const Logo = styled.div`
+  font-size: 32px;
+  font-weight: bold;
+  color: rgb(90, 36, 141);
+  font-family: "Vitro-Inspire";
+  letter-spacing: 2px;
+  cursor: pointer;
+`;
+
+const CsMenu = styled.ul`
+  display: flex;
+  gap: 28px;
+  list-style: none;
+
+  li {
+    font-size: 14px;
+    color: #111111;
+    cursor: pointer;
+    position: relative;
+
+    &:not(:last-child)::after {
+      content: "|";
+      position: absolute;
+      right: -16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #111111;
+      font-weight: 300;
+      font-size: 10px;
+    }
+  }
+`;
+const BottompBar = styled.div`
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  margin: 0 auto;
+`;
+
+const MainNav = styled.ul`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  li {
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    list-style: none;
+
+    &:hover {
+      color: rgb(168, 68, 255);
+    }
+  }
+`;
+
+const QuickBook = styled.button`
+  background-color: #e7af1b;
+  border: 0;
+  border-radius: 8px;
+  padding: 14px 24px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  transition: background-color 0.5s ease;
+
+  img {
+    width: 15px;
+  }
+
+  &:hover {
+    background-color: #6f5c80;
+  }
+`;
