@@ -1,11 +1,12 @@
 import React from "react";
 import GlobalStyle from "../styles/GlobalStyle.js";
-import CarouselBootstraps from "../components/Carousel";
-import QuickBook from "../components/QuickBook";
+import CarouselBootstraps from "../components/Main_Contents/Carousel.js";
+import QuickBook from "../components/Main_Contents/QuickBook.js";
 import Header from "../components/Header";
 import MainSpecialOffers from "../components/Main_Contents/MainSpecialOffers";
 import Momentum from "../components/Momentum.js";
 import Footer from "../components/Footer.js";
+import RoomType from "../components/Main_Contents/RoomType.js";
 
 function Main() {
   return (
@@ -15,6 +16,7 @@ function Main() {
       <CarouselBootstraps></CarouselBootstraps>
       <QuickBook></QuickBook>
       <MainSpecialOffers></MainSpecialOffers>
+      <RoomType></RoomType>
       <Momentum></Momentum>
       <Footer></Footer>
     </>

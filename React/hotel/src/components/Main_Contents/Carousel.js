@@ -7,12 +7,12 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import "../styles/Carousel.css";
+import "../../styles/Carousel.css";
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
-import carouselData from "../api/CarouselAPI";
+import carouselData from "../../api/CarouselAPI";
 
 export default function App() {
   return (

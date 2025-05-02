@@ -40,7 +40,7 @@ const GlobalStyle = createGlobalStyle`
     cursor: pointer;
   }
   .forPadding {
-    padding:30px;
+    padding:35px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

@@ -6,7 +6,7 @@ function Momentum() {
     <>
       <MomentumAll>
         <MomentumWrap>
-          <img src="/img/momentum/momentum.jpeg"></img>
+          <img src="/img/momentum.jpg"></img>
           <MomentumItmes>
             <h1>Momentum</h1>
             <p>모멘텀 멤버십에 가입하고, 차별화된 혜택을 누려보세요.</p>
