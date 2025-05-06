@@ -7,6 +7,7 @@ import MainSpecialOffers from "../components/Main_Contents/MainSpecialOffers";
 import Momentum from "../components/Momentum.js";
 import Footer from "../components/Footer.js";
 import RoomType from "../components/Main_Contents/RoomType.js";
+import HotelTowers from "../components/Main_Contents/HotelTowers.js";
 
 function Main() {
   return (
@@ -16,6 +17,7 @@ function Main() {
       <CarouselBootstraps></CarouselBootstraps>
       <QuickBook></QuickBook>
       <MainSpecialOffers></MainSpecialOffers>
+      <HotelTowers></HotelTowers>
       <RoomType></RoomType>
       <Momentum></Momentum>
       <Footer></Footer>

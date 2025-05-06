@@ -97,6 +97,7 @@ const OfferAllBtn = styled.div`
 `;
 const AllBtn = styled.button`
   width: 400px;
+  height: 72px;
   border: none;
   border-radius: 16px;
   background-color: #6f5c80;

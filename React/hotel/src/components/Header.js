@@ -21,13 +21,13 @@ function Header() {
           </TopBar>
           <BottompBar>
             <MainNav>
-              <li>OFFERS</li>
-              <li>STAY</li>
+              <li onClick={() => navigate("/offers")}>OFFERS</li>
+              <li onClick={() => navigate("/stay")}>STAY</li>
               <li>EAT & DRINK</li>
               <li>MALL</li>
               <li>SPLASH BAY</li>
               <li>ENTERTAINMENT</li>
-              <li>MEET</li>
+              <li onClick={() => alert("Not creating yet")}>MEET</li>
               <li>CASINO</li>
               <li>MOMENTUM</li>
               <QuickBook>

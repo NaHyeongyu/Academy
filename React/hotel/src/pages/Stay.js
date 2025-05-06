@@ -11,7 +11,7 @@ import roomData from "../api/RoomMainAPI.json";
 
 const GlobalStyle = createGlobalStyle`
   .swiper-slide {
-    width: auto !important;
+    width: 778px !important;
     height: 520px;
   }
 `;
@@ -78,7 +78,7 @@ function Stay() {
             >
               {"<"}
             </button>
-            <TowersDetail>
+            <TowersDetail key={selectedRoom.slug || selectedRoom.type}>
               <div className="forflex">
                 <h1>{selectedRoom.type}</h1>
                 <h5>{selectedRoom.titleDetail}</h5>
@@ -94,7 +94,9 @@ function Stay() {
                 spaceBetween={0}
                 slidesPerView={1}
                 loop={true}
-                watchSlidesProgress={true}
+                onSlideChange={(swiper) =>
+                  setSelectedRoomIndex(swiper.realIndex)
+                }
                 navigation={{
                   nextEl: ".custom-next",
                   prevEl: ".custom-prev",
@@ -106,9 +108,9 @@ function Stay() {
                   borderRadius: "0 32px 32px 0",
                 }}
               >
-                {[selectedRoom.thumbnail].map((src, idx) => (
+                {selectedTower.rooms.map((room, idx) => (
                   <SwiperSlide
-                    key={idx}
+                    key={room.slug || idx}
                     style={{
                       width: "778px",
                       height: "520px",
@@ -116,7 +118,7 @@ function Stay() {
                       overflow: "hidden",
                     }}
                   >
-                    <StyledSlideImage src={src} alt={`slide-${idx}`} />
+                    <StyledSlideImage src={room.thumbnail} alt={room.type} />
                   </SwiperSlide>
                 ))}
               </Swiper>
@@ -292,12 +294,24 @@ const TowersDetail = styled.div`
   position: absolute;
   top: 0;
   left: 0;
+  opacity: 0;
+  transform: translateX(40px);
+  animation: fadeSlideRight 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+
+  @keyframes fadeSlideRight {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
   h1 {
     color: white;
     font-size: 48px;
     font-weight: 1000;
     letter-spacing: 2px;
   }
+
   h5 {
     width: 460px;
     color: white;
@@ -359,7 +373,7 @@ const DetailBtn = styled.button`
 `;
 
 const StyledSlideImage = styled.img`
-  width: 778px;
+  width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 0 32px 32px 0;
