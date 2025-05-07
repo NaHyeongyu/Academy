@@ -23,13 +23,13 @@ function Header() {
             <MainNav>
               <li onClick={() => navigate("/offers")}>OFFERS</li>
               <li onClick={() => navigate("/stay")}>STAY</li>
-              <li>EAT & DRINK</li>
-              <li>MALL</li>
-              <li>SPLASH BAY</li>
-              <li>ENTERTAINMENT</li>
-              <li onClick={() => alert("Not creating yet")}>MEET</li>
-              <li>CASINO</li>
-              <li>MOMENTUM</li>
+              <li onClick={() => alert("Not yet created")}>EAT & DRINK</li>
+              <li onClick={() => alert("Not yet created")}>MALL</li>
+              <li onClick={() => alert("Not yet created")}>SPLASH BAY</li>
+              <li onClick={() => alert("Not yet created")}>ENTERTAINMENT</li>
+              <li onClick={() => alert("Not yet created")}>MEET</li>
+              <li onClick={() => alert("Not yet created")}>CASINO</li>
+              <li onClick={() => alert("Not yet created")}>MOMENTUM</li>
               <QuickBook>
                 <img src="/img/header/calendaricon.png"></img>예약하기
               </QuickBook>

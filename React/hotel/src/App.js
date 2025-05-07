@@ -7,10 +7,14 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 //Router
 import Router from "./routes/Router.js";
 
+import { Provider } from "react-redux";
+import store from "./redux/store";
 function App() {
   return (
     <>
-      <Router></Router>
+      <Provider store={store}>
+        <Router></Router>
+      </Provider>
     </>
   );
 }

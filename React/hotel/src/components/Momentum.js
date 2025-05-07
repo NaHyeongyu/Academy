@@ -25,7 +25,7 @@ export default Momentum;
 const MomentumAll = styled.div`
   width: 100%;
   height: 340px;
-  margin-top: 120px;
+  margin-top: 160px;
 `;
 
 const MomentumWrap = styled.div`

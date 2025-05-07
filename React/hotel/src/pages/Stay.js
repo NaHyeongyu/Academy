@@ -136,6 +136,7 @@ function Stay() {
           </TowersItem>
         </Towers>
       </div>
+
       <Momentum></Momentum>
       <Footer></Footer>
     </>
@@ -240,7 +241,7 @@ const Title = styled.h1`
 `;
 
 const Towers = styled.div`
-  height: 1500px;
+  height: auto;
   width: 100%;
   max-width: 1488px;
   margin: 0 auto;
