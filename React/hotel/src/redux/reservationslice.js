@@ -1,9 +1,13 @@
+import dayjs from "dayjs";
 import { createSlice } from "@reduxjs/toolkit";
+
+const today = dayjs().format("YYYY-MM-DD");
+const tomorrow = dayjs().add(1, "day").format("YYYY-MM-DD");
 
 const initialState = {
   rooms: [],
-  checkIn: null,
-  checkOut: null,
+  checkIn: today,
+  checkOut: tomorrow,
   guestCount: {
     adults: 1,
     children: 0,

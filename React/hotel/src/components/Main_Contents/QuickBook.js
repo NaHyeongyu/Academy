@@ -26,7 +26,11 @@ import {
 function QuickBook() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const reservation = useSelector((state) => state.reservation);
+  const reservationState = useSelector((state) => state.reservation);
+  const reservation =
+    reservationState && typeof reservationState === "object"
+      ? reservationState
+      : {};
 
   const safeDayjs = (val) => {
     const d = dayjs(val);
@@ -34,17 +38,14 @@ function QuickBook() {
   };
 
   const [checkInDate, setCheckInDate] = React.useState(
-    safeDayjs(reservation.checkIn)
+    safeDayjs(reservationState?.checkIn)
   );
   const [checkOutDate, setCheckOutDate] = React.useState(
-    safeDayjs(reservation.checkOut)
+    safeDayjs(reservationState?.checkOut)
   );
-  const [adults, setAdults] = React.useState(
-    reservation.guestCount?.adults || 2
-  );
-  const [children, setChildren] = React.useState(
-    reservation.guestCount?.children || 0
-  );
+  const guestCount = reservation.guestCount || {};
+  const [adults, setAdults] = React.useState(guestCount.adults || 1);
+  const [children, setChildren] = React.useState(guestCount.children || 0);
 
   return (
     <div>
@@ -142,7 +143,7 @@ function QuickBook() {
                 dispatch(setCheckIn(checkInDate.format("YYYY-MM-DD")));
                 dispatch(setCheckOut(checkOutDate.format("YYYY-MM-DD")));
                 dispatch(setGuestCount({ adults, children }));
-                navigate("/reservation");
+                window.open("/reservation", "_blank", "noopener,noreferrer");
               }}
             >
               예약 조회

@@ -38,12 +38,21 @@ function RoomType() {
                 <h1>{selectedRoom.title}</h1>
                 <h5>{selectedRoom.summary}</h5>
               </div>
-              <DetailBtn
-                onClick={() => (window.location.href = selectedRoom.link)}
-              >
-                <span>더 알아보기</span>
-                <img src="/img/buttonarrow.png" />
-              </DetailBtn>
+              <div className="forbutton">
+                <DetailBtn
+                  onClick={() =>
+                    window.open("/reservation", "_blank", "noopener,noreferrer")
+                  }
+                  className="bookbutton"
+                >
+                  <span>예약하기</span>
+                  <img src="/img/buttonarrow.png" />
+                </DetailBtn>
+                <DetailBtn onClick={() => navigate("/stay")}>
+                  <span>더 알아보기</span>
+                  <img src="/img/buttonarrow.png" />
+                </DetailBtn>
+              </div>
             </RoomTypeDetail>
             <RoomTypeImg>
               <Swiper
@@ -91,7 +100,7 @@ function RoomType() {
             </button>
           </RoomTypeItem>
         </RoomTypeAll>
-        <AllBtn onClick={() => navigate("/offers")}>
+        <AllBtn onClick={() => navigate("/stay")}>
           <span>전체 보기</span>
           <img src="/img/buttonarrow.png" />
         </AllBtn>
@@ -189,6 +198,15 @@ const RoomTypeDetail = styled.div`
     font-weight: 300;
     margin-top: 20px;
     line-height: 1.7;
+  }
+  .forbutton {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  .bookbutton {
+    background-color: #6f5c80;
+    border: none;
   }
 `;
 const RoomTypeImg = styled.div`

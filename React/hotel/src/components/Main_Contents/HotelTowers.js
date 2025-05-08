@@ -63,7 +63,7 @@ function HotelTowers() {
                 <TowerInfo>
                   <h2>{tower.name}</h2>
                   <p>{tower.description}</p>
-                  <AllBtn onClick={() => navigate(tower.slug)}>
+                  <AllBtn onClick={() => navigate("/stay")}>
                     <span>전체 보기</span>
                     <img src="/img/buttonarrow.png" />
                   </AllBtn>

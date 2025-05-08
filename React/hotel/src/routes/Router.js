@@ -4,6 +4,7 @@ import Offers from "../pages/Offers";
 import OffersDetail from "../pages/OffersDetail";
 import Stay from "../pages/Stay";
 import Reservation from "../pages/Reservation";
+import Cart from "../pages/Cart";
 import { BrowserRouter } from "react-router-dom";
 import ScrollToTop from "../components/ScrollToTop";
 
@@ -20,6 +21,7 @@ function Router() {
           path="/reservation"
           element={<Reservation></Reservation>}
         ></Route>
+        <Route path="/reservation/cart" element={<Cart></Cart>}></Route>
       </Routes>
     </BrowserRouter>
   );

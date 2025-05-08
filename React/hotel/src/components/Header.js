@@ -30,7 +30,11 @@ function Header() {
               <li onClick={() => alert("Not yet created")}>MEET</li>
               <li onClick={() => alert("Not yet created")}>CASINO</li>
               <li onClick={() => alert("Not yet created")}>MOMENTUM</li>
-              <QuickBook>
+              <QuickBook
+                onClick={() =>
+                  window.open("/reservation", "_blank", "noopener,noreferrer")
+                }
+              >
                 <img src="/img/header/calendaricon.png"></img>예약하기
               </QuickBook>
             </MainNav>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import dayjs, { Dayjs } from "dayjs";
@@ -22,8 +22,9 @@ import {
   setCheckOut,
   setGuestCount,
 } from "../../redux/reservationslice";
+import ReservationRoom from "./ReservationRoom";
 // import GlobalStyle from "../styles/GlobalStyle.js";
-function QuickBook() {
+function ReservationHeader({ roomRef }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const reservation = useSelector((state) => state.reservation);
@@ -50,121 +51,125 @@ function QuickBook() {
     <div>
       <HeaderWrapper>
         <HeaderItems>
-          <Logo>INSPIRE</Logo>
+          <Logo onClick={() => navigate("/")}>INSPIRE</Logo>
           <Nav>
             <img src="/img/bedicon.png"></img>객실 & 날짜 선택
           </Nav>
-          <Cart>
+          <Cart onClick={() => navigate("/reservation/cart")}>
             <img src="/img/carticon.png"></img>장바구니
           </Cart>
         </HeaderItems>
-      </HeaderWrapper>
-      <OverlappingWhiteBox>
-        <LocalizationProvider dateAdapter={AdapterDayjs}>
-          <DemoContainer components={["DatePicker", "DatePicker"]}>
-            <DatePicker
-              label="체크인 날짜"
-              value={checkInDate}
-              onChange={(newValue) => setCheckInDate(newValue)}
-              sx={{ width: 200 }}
-            />
-            <DatePicker
-              label="체크아웃 날짜"
-              value={checkOutDate}
-              onChange={(newValue) => setCheckOutDate(newValue)}
-              minDate={checkInDate}
-              sx={{ width: 200 }}
-              slotProps={{
-                day: {
-                  sx: {
-                    "&:hover": {
-                      backgroundColor: "#f0e6ff",
-                      color: "#333",
+        <ReservationBanner>
+          <img src="/img/inspire1.png"></img>
+        </ReservationBanner>
+        <OverlappingWhiteBox>
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <DemoContainer components={["DatePicker", "DatePicker"]}>
+              <DatePicker
+                label="체크인 날짜"
+                value={checkInDate}
+                onChange={(newValue) => setCheckInDate(newValue)}
+                sx={{ width: 200 }}
+              />
+              <DatePicker
+                label="체크아웃 날짜"
+                value={checkOutDate}
+                onChange={(newValue) => setCheckOutDate(newValue)}
+                minDate={checkInDate}
+                sx={{ width: 200 }}
+                slotProps={{
+                  day: {
+                    sx: {
+                      "&:hover": {
+                        backgroundColor: "#f0e6ff",
+                        color: "#333",
+                      },
                     },
                   },
-                },
-              }}
-            />
-            <Paper
-              variant="outlined"
-              sx={{
-                py: 1.5,
-                px: 2,
-                borderRadius: 2,
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                gap: 3,
-                border: "none",
-                boxShadow: "none",
-              }}
-            >
-              <Typography variant="subtitle1" fontWeight="bold" mr={2}>
-                게스트 인원
-              </Typography>
-              <Box display="flex" alignItems="center" gap={2}>
-                <Typography>성인</Typography>
-                <IconButton
-                  onClick={() => setAdults((prev) => Math.max(prev - 1, 1))}
-                  size="small"
-                >
-                  <RemoveIcon />
-                </IconButton>
-                <Typography>{adults}</Typography>
-                <IconButton
-                  onClick={() => setAdults((prev) => prev + 1)}
-                  size="small"
-                >
-                  <AddIcon />
-                </IconButton>
-              </Box>
-              <Box display="flex" alignItems="center" gap={2}>
-                <Typography>어린이</Typography>
-                <IconButton
-                  onClick={() => setChildren((prev) => Math.max(prev - 1, 0))}
-                  size="small"
-                >
-                  <RemoveIcon />
-                </IconButton>
-                <Typography>{children}</Typography>
-                <IconButton
-                  onClick={() => setChildren((prev) => prev + 1)}
-                  size="small"
-                >
-                  <AddIcon />
-                </IconButton>
-              </Box>
-            </Paper>
-            <Button
-              variant="contained"
-              sx={{
-                backgroundColor: "#f2b411",
-                "&:hover": {
+                }}
+              />
+              <Paper
+                variant="outlined"
+                sx={{
+                  py: 1.5,
+                  px: 2,
+                  borderRadius: 2,
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  gap: 3,
+                  border: "none",
+                  boxShadow: "none",
+                }}
+              >
+                <Typography variant="subtitle1" fontWeight="bold" mr={2}>
+                  게스트 인원
+                </Typography>
+                <Box display="flex" alignItems="center" gap={2}>
+                  <Typography>성인</Typography>
+                  <IconButton
+                    onClick={() => setAdults((prev) => Math.max(prev - 1, 1))}
+                    size="small"
+                  >
+                    <RemoveIcon />
+                  </IconButton>
+                  <Typography>{adults}</Typography>
+                  <IconButton
+                    onClick={() => setAdults((prev) => prev + 1)}
+                    size="small"
+                  >
+                    <AddIcon />
+                  </IconButton>
+                </Box>
+                <Box display="flex" alignItems="center" gap={2}>
+                  <Typography>어린이</Typography>
+                  <IconButton
+                    onClick={() => setChildren((prev) => Math.max(prev - 1, 0))}
+                    size="small"
+                  >
+                    <RemoveIcon />
+                  </IconButton>
+                  <Typography>{children}</Typography>
+                  <IconButton
+                    onClick={() => setChildren((prev) => prev + 1)}
+                    size="small"
+                  >
+                    <AddIcon />
+                  </IconButton>
+                </Box>
+              </Paper>
+              <Button
+                variant="contained"
+                sx={{
                   backgroundColor: "#f2b411",
-                },
-                height: 56,
-                px: 4,
-                borderRadius: 2,
-                fontWeight: "bold",
-                whiteSpace: "nowrap",
-              }}
-              onClick={() => {
-                dispatch(setCheckIn(checkInDate.format("YYYY-MM-DD")));
-                dispatch(setCheckOut(checkOutDate.format("YYYY-MM-DD")));
-                dispatch(setGuestCount({ adults, children }));
-                navigate("/reservation");
-              }}
-            >
-              예약 조회
-            </Button>
-          </DemoContainer>
-        </LocalizationProvider>
-      </OverlappingWhiteBox>
+                  "&:hover": {
+                    backgroundColor: "#f2b411",
+                  },
+                  height: 56,
+                  px: 4,
+                  borderRadius: 2,
+                  fontWeight: "bold",
+                  whiteSpace: "nowrap",
+                }}
+                onClick={() => {
+                  dispatch(setCheckIn(checkInDate.format("YYYY-MM-DD")));
+                  dispatch(setCheckOut(checkOutDate.format("YYYY-MM-DD")));
+                  dispatch(setGuestCount({ adults, children }));
+                  navigate("/reservation");
+                  roomRef.current?.reloadRooms();
+                }}
+              >
+                예약 조회
+              </Button>
+            </DemoContainer>
+          </LocalizationProvider>
+        </OverlappingWhiteBox>
+      </HeaderWrapper>
     </div>
   );
 }
 
-export default QuickBook;
+export default ReservationHeader;
 const HeaderWrapper = styled.header`
   width: 100%;
   height: 80px;
@@ -231,13 +236,14 @@ const Cart = styled.button`
 `;
 const ReservationBanner = styled.div`
   width: 100%;
-  height: 180px;
-  margin-top: 15px;
+  height: 200px;
   position: relative;
+  margin-top: 15px;
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: bottom;
   }
 
   &::after {
@@ -256,7 +262,11 @@ const OverlappingWhiteBox = styled.div`
   height: auto;
   padding: 24px;
   background-color: white;
-  margin: 100px auto 0;
+  position: absolute;
+  bottom: -255px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
   z-index: 3;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;

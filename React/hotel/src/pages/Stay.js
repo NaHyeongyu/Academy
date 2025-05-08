@@ -8,6 +8,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import roomData from "../api/RoomMainAPI.json";
+import { useNavigate } from "react-router-dom";
 
 const GlobalStyle = createGlobalStyle`
   .swiper-slide {
@@ -22,6 +23,7 @@ function Stay() {
 
   const selectedTower = roomData[selectedTowerIndex];
   const selectedRoom = selectedTower.rooms[selectedRoomIndex];
+  const navigate = useNavigate();
 
   return (
     <>
@@ -83,10 +85,21 @@ function Stay() {
                 <h1>{selectedRoom.type}</h1>
                 <h5>{selectedRoom.titleDetail}</h5>
               </div>
-              <DetailBtn>
-                <span>더 알아보기</span>
-                <img src="/img/buttonarrow.png" />
-              </DetailBtn>
+              <div className="forbutton">
+                <DetailBtn
+                  className="bookbutton"
+                  onClick={() =>
+                    window.open("/reservation", "_blank", "noopener,noreferrer")
+                  }
+                >
+                  <span>예약하기</span>
+                  <img src="/img/buttonarrow.png" />
+                </DetailBtn>
+                <DetailBtn>
+                  <span>더 알아보기</span>
+                  <img src="/img/buttonarrow.png" />
+                </DetailBtn>
+              </div>
             </TowersDetail>
             <TowersImg>
               <Swiper
@@ -321,6 +334,15 @@ const TowersDetail = styled.div`
     margin-top: 20px;
     line-height: 1.7;
   }
+  .forbutton {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  .bookbutton {
+    background-color: #6f5c80;
+    border: none;
+  }
 `;
 const TowersImg = styled.div`
   width: 778px;
@@ -338,7 +360,7 @@ const TowersImg = styled.div`
   }
 `;
 const DetailBtn = styled.button`
-  width: 400px;
+  width: 220px;
   height: 72px;
   border: 0.5px solid white;
   background-color: #7c8fac;
