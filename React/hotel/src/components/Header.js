@@ -28,8 +28,8 @@ function Header() {
               <li onClick={() => alert("Not yet created")}>SPLASH BAY</li>
               <li onClick={() => alert("Not yet created")}>ENTERTAINMENT</li>
               <li onClick={() => alert("Not yet created")}>MEET</li>
-              <li onClick={() => alert("Not yet created")}>CASINO</li>
               <li onClick={() => alert("Not yet created")}>MOMENTUM</li>
+              <li onClick={() => navigate("/board")}>Q&A</li>
               <QuickBook
                 onClick={() =>
                   window.open("/reservation", "_blank", "noopener,noreferrer")

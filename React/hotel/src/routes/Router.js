@@ -7,6 +7,7 @@ import Reservation from "../pages/Reservation";
 import Cart from "../pages/Cart";
 import { BrowserRouter } from "react-router-dom";
 import ScrollToTop from "../components/ScrollToTop";
+import Board from "../pages/Board";
 
 function Router() {
   return (
@@ -22,6 +23,7 @@ function Router() {
           element={<Reservation></Reservation>}
         ></Route>
         <Route path="/reservation/cart" element={<Cart></Cart>}></Route>
+        <Route path="/board" element={<Board></Board>}></Route>
       </Routes>
     </BrowserRouter>
   );
